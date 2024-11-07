@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap";
+
+$green-color: #28a745;
+
+.login-box {
+    background-color: $green-color;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        background-color: lighten($green-color, 20%);
+        border: none;
+        color: #fff;
+
+        &:focus {
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .btn-success {
+        background-color: darken($green-color, 10%);
+        border: none;
+
+        &:hover {
+            background-color: lighten($green-color, 5%);
+        }
+    }
+}
