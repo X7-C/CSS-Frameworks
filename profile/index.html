@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/Styles.css">
+    <script src="../js/auth/auth.js" defer></script>
 </head>
-<body>
-    <h1>Profile Page</h1>
+<body class="container py-5">
+    <div class="mb-4">
+        <a href="../feed/index.html" class="btn btn-primary">Go to Feed</a>
+        <button onclick="logout()" class="btn btn-danger float-end">Log Out</button>
+    </div>
+
+    <div class="text-center mb-5">
+        <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-circle mb-3">
+        <h2>Many Thanks</h2>
+        <p>Followers: 2B+ | Following: 1</p>
+        <button class="btn btn-outline-primary">Follow</button>
+    </div>
+
+    <h3>User Posts</h3>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1617608917892-112806bc3087?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Post Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">My First Post!</h5>
+                    <p class="card-text">Text appropriate to the post</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1590355200067-675cf378fb74?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Post Thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title">New "item"</h5>
+                    <p class="card-text">Text appropriate to the post</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

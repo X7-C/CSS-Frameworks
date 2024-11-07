@@ -1,5 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+.body {
+    background-color: #555;
+}
+
+
 $green-color: #28a745;
 
 .login-box {
@@ -29,5 +35,47 @@ $green-color: #28a745;
         &:hover {
             background-color: lighten($green-color, 5%);
         }
+    }
+}
+
+
+.feed-page {
+    .masonry {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+
+        .masonry-item {
+            break-inside: avoid;
+        }
+    }
+
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .card-title {
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #555;
+        }
+    }
+
+    .form-control, .form-select {
+        border-radius: 5px;
+    }
+}
+
+
+.profile-page {
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-primary {
+        border-radius: 5px;
     }
 }
