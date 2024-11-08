@@ -9,41 +9,24 @@
     <link rel="stylesheet" href="../styles/Styles.css">
 </head>
 <body class="container py-5 feed-page">
-    <div class="d-flex justify-content-end align-items-center mb-4" style="margin-bottom: 20px;">
-        <a href="../profile/index.html" class="text-decoration-none text-white">
-            <span>Back to Profile</span>
-            <i class="bi bi-arrow-right"></i>
+
+    <header class="text-center mb-4">
+        <h1 class="feed-title">Feed Page</h1>
+    </header>
+
+    <div class="text-center mb-4">
+        <a href="../profile/index.html" class="text-decoration-none text-white fs-3">
+            <i class="bi bi-person-circle"></i>
         </a>
     </div>
 
-    <h1 class="text-center mb-4">Feed Page</h1>
     <div class="row mb-4">
-        <div class="col-md-12">
-            <h2>Create New Post</h2>
-            <form action="/path/to/your/server/side/script" method="POST">
-                <div class="mb-3">
-                    <label for="postTitle" class="form-label">Post Title</label>
-                    <input type="text" id="postTitle" name="title" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="postContent" class="form-label">Post Content</label>
-                    <textarea id="postContent" name="content" class="form-control" rows="3" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="postImage" class="form-label">Thumbnail URL (optional)</label>
-                    <input type="url" id="postImage" name="thumbnail" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Create Post</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="row mb-4">
-        <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="Search posts...">
+        <div class="col-md-8 d-flex align-items-center">
+            <a href="../feedPostCreate/index.html" class="btn btn-success btn-custom-small me-2">Create</a>
+            <input type="text" class="form-control input-custom me-2" placeholder="Search posts...">
         </div>
         <div class="col-md-4">
-            <select class="form-select">
+            <select class="form-select select-custom">
                 <option selected>Sort by</option>
                 <option value="recent">Most Recent</option>
                 <option value="popular">Most Popular</option>
@@ -52,6 +35,7 @@
     </div>
     
     <div class="row masonry">
+
         <div class="col-md-6 mb-4 masonry-item">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1617608917892-112806bc3087?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Post Thumbnail">
@@ -112,6 +96,10 @@
             </div>
         </div>
     </div>
+    <div class="text-center mt-5">
+        <button id="scrollToTop" class="btn btn-secondary">Back to Top</button>
+    </div>
+
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script>
@@ -121,6 +109,13 @@
                 itemSelector: '.masonry-item',
                 columnWidth: '.masonry-item',
                 percentPosition: true
+            });
+
+            document.getElementById('scrollToTop').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
     </script>

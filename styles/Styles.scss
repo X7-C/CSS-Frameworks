@@ -1,4 +1,4 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+@use "../node_modules/bootstrap/scss/bootstrap" as *;
 
 html, body {
     background-color: #a8a7a7;
@@ -46,6 +46,31 @@ $green-color: #28a745;
             break-inside: avoid;
         }
     }
+    
+    .btn-custom-small {
+        height: 38px;
+        line-height: 1.5;
+    }
+    
+    .input-custom,
+    .select-custom {
+        height: 38px;
+    }
+
+    .feed-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .input-custom,
+        .select-custom {
+            margin-bottom: 10px;
+        }
+    }
 
     .card {
         border: none;
@@ -63,6 +88,10 @@ $green-color: #28a745;
     .form-control,
     .form-select {
         border-radius: 5px;
+    }
+
+    #scrollToTop {
+        margin-top: 20px;
     }
 }
 

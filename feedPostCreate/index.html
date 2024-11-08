@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/Styles.css">
+</head>
+<body class="container py-5">
+    <header class="text-center mb-4">
+        <h1>Create Post</h1>
+    </header>
+
+    <div class="d-flex justify-content-between mb-4">
+        <a href="../feed/index.html" class="btn btn-secondary">Back to Feed</a>
+        <a href="../profile/index.html" class="btn btn-secondary">Back to Profile</a>
+    </div>
+
+    <form class="mb-4" id="postForm">
+        <div class="mb-3">
+            <label for="postTitle" class="form-label">Post Title</label>
+            <input type="text" id="postTitle" class="form-control" placeholder="Enter post title" required>
+        </div>
+        <div class="mb-3">
+            <label for="postContent" class="form-label">Post Content</label>
+            <textarea id="postContent" class="form-control" rows="5" placeholder="Write your post here..." required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="postImage" class="form-label">Optional: Image/Link</label>
+            <input type="url" id="postImage" class="form-control" placeholder="Enter image URL or link">
+        </div>
+        <button type="submit" class="btn btn-success">Submit Post</button>
+    </form>
+
+    <div class="text-center">
+        <button id="scrollToTop" class="btn btn-secondary">Back to Top</button>
+    </div>
+
+    <script>
+        document.getElementById('postForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = "../feed/index.html";
+        });
+    </script>
+</body>
+</html>
