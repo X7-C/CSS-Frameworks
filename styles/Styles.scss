@@ -1,10 +1,8 @@
-@import "~bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
-
-.body {
-    background-color: #555;
+html, body {
+    background-color: #a8a7a7;
 }
-
 
 $green-color: #28a745;
 
@@ -38,7 +36,6 @@ $green-color: #28a745;
     }
 }
 
-
 .feed-page {
     .masonry {
         display: grid;
@@ -63,11 +60,11 @@ $green-color: #28a745;
         }
     }
 
-    .form-control, .form-select {
+    .form-control,
+    .form-select {
         border-radius: 5px;
     }
 }
-
 
 .profile-page {
     .card {
