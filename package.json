@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch styles/Styles.scss:styles/Styles.css",
-    "build": "sass styles/Styles.scss:styles/Styles.css --style=compressed"
-  },
+  "watch": "sass --watch styles/Styles.scss:styles/Styles.css",
+  "build": "npx sass styles/Styles.scss:styles/Styles.css --style=compressed",
+  "start": "node server.js"
+}
+,
   "dependencies": {
     "bootstrap": "^5.3.3"
   },
