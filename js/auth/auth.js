@@ -1,7 +1,7 @@
 function login() {
     const token = ''; 
     localStorage.setItem('authToken', token);
-    window.location.href = '../profile/index.html';
+    window.location.href = './profile/index.html';
 }
 
 function isLoggedIn() {
