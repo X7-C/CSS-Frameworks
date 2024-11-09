@@ -17,31 +17,23 @@
         <a href="../profile/index.html" class="btn btn-secondary">Back to Profile</a>
     </div>
 
-    <form class="mb-4" id="postForm">
+    <form onsubmit="createPost(); return false;">
         <div class="mb-3">
             <label for="postTitle" class="form-label">Post Title</label>
             <input type="text" id="postTitle" class="form-control" placeholder="Enter post title" required>
         </div>
         <div class="mb-3">
             <label for="postContent" class="form-label">Post Content</label>
-            <textarea id="postContent" class="form-control" rows="5" placeholder="Write your post here..." required></textarea>
+            <textarea id="postContent" class="form-control" rows="5" placeholder="Enter your post content" required></textarea>
         </div>
         <div class="mb-3">
-            <label for="postImage" class="form-label">Optional: Image/Link</label>
-            <input type="url" id="postImage" class="form-control" placeholder="Enter image URL or link">
+            <label for="postImage" class="form-label">Post Image URL</label>
+            <input type="url" id="postImage" class="form-control" placeholder="Enter image URL">
         </div>
-        <button type="submit" class="btn btn-success">Submit Post</button>
+        <button type="submit" class="btn btn-success">Create Post</button>
     </form>
 
-    <div class="text-center">
-        <button id="scrollToTop" class="btn btn-secondary">Back to Top</button>
-    </div>
-
-    <script>
-        document.getElementById('postForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            window.location.href = "../feed/index.html";
-        });
-    </script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/createPost/create.js"></script>
 </body>
 </html>
