@@ -2,41 +2,87 @@
 
 html, body {
     background-color: #a8a7a7;
+    margin: 0;
+    padding: 0;
 }
 
 $green-color: #28a745;
+$header-bg-color: #3a3a3a;
+$button-blue-color: #007bff;
+$box-background-color: #d3d3d3;
+$input-background-color: lighten($box-background-color, 10%);
+$placeholder-text-color: darken($box-background-color, 20%);
 
-.login-box {
-    background-color: $green-color;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    .form-label {
-        font-weight: bold;
+.auth-page {
+    h1 {
+        color: #ffffff;
     }
 
-    .form-control {
-        background-color: lighten($green-color, 20%);
-        border: none;
-        color: #fff;
+    .auth-box {
+        background-color: $box-background-color;
+        color: #000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 516px;
+        width: 100%;
 
-        &:focus {
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        .form-label {
+            color: #000;
+            font-weight: normal;
+            text-align: left;
         }
-    }
 
-    .btn-success {
-        background-color: darken($green-color, 10%);
-        border: none;
+        .form-control {
+            background-color: $input-background-color;
+            color: #000;
+            border: none;
 
-        &:hover {
-            background-color: lighten($green-color, 5%);
+            &:focus {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .btn-success {
+            background-color: darken($green-color, 10%);
+            font-weight: bold;
+            border: none;
+
+            &:hover {
+                background-color: lighten($green-color, 5%);
+            }
+        }
+
+        .btn-placeholder {
+            background-color: $box-background-color;
+            color: $placeholder-text-color;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-outline {
+            background-color: $box-background-color;
+            color: #000;
+            border: 1px solid #000;
+            font-weight: bold;
+
+            &:hover {
+                background-color: lighten($box-background-color, 5%);
+                color: #000;
+            }
         }
     }
 }
 
 .feed-page {
+    .header-box {
+        background-color: $header-bg-color;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        padding: 16px;
+        margin-top: 1px;
+        margin-bottom: 20px;
+    }
+
     .masonry {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -46,29 +92,62 @@ $green-color: #28a745;
             break-inside: avoid;
         }
     }
-    
+
     .btn-custom-small {
         height: 38px;
         line-height: 1.5;
     }
-    
-    .input-custom,
+
+    .input-group {
+        display: flex;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .input-custom {
+        height: 38px;
+        flex: 1.5;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
     .select-custom {
         height: 38px;
+        flex: 0.5;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .user-icon {
+        font-size: 1.75rem;
     }
 
     .feed-title {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        color: #ffffff;
         margin-top: 10px;
+        margin-left: 0;
     }
 
     @media (max-width: 768px) {
-        .input-custom,
-        .select-custom {
+        .top-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .create-button {
+            order: 3;
+            margin-top: 10px;
+        }
+
+        .user-icon {
+            order: 1;
             margin-bottom: 10px;
+        }
+
+        .search-sort {
+            order: 2;
+            width: 100%;
+            max-width: 300px;
         }
     }
 
@@ -76,12 +155,9 @@ $green-color: #28a745;
         border: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-        .card-title {
-            font-weight: bold;
-        }
-
+        .card-title,
         .card-text {
-            color: #555;
+            color: #000000;
         }
     }
 
@@ -96,12 +172,76 @@ $green-color: #28a745;
 }
 
 .profile-page {
+    .header-box {
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        color: #ffffff;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.unsplash.com/photo-1670884307082-b1df3a86a746?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: 1;
+        }
+
+        > * {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        h2, p, a, button {
+            color: #ffffff;
+        }
+
+        .btn-outline-primary {
+            background-color: $button-blue-color;
+            color: #ffffff;
+            border: none;
+
+            &:hover {
+                background-color: darken($button-blue-color, 10%);
+            }
+        }
+    }
+
+    .rounded-circle {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    h3 {
+        color: #ffffff;
+    }
+
     .card {
         border: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .card-title,
+        .card-text {
+            color: #000000;
+        }
     }
 
     .btn-outline-primary {
         border-radius: 5px;
+    }
+}
+
+.create-post-page {
+    h3, label {
+        color: #ffffff;
     }
 }

@@ -9,33 +9,29 @@
     <link rel="stylesheet" href="../styles/Styles.css">
 </head>
 <body class="container py-5 feed-page">
-
-    <header class="text-center mb-4">
-        <h1 class="feed-title">Feed Page</h1>
-    </header>
-
-    <div class="text-center mb-4">
-        <a href="../profile/index.html" class="text-decoration-none text-white fs-3">
-            <i class="bi bi-person-circle"></i>
-        </a>
-    </div>
-
-    <div class="row mb-4">
-        <div class="col-md-8 d-flex align-items-center">
-            <a href="../feedPostCreate/index.html" class="btn btn-success btn-custom-small me-2">Create</a>
-            <input type="text" class="form-control input-custom me-2" placeholder="Search posts...">
-        </div>
-        <div class="col-md-4">
-            <select class="form-select select-custom">
-                <option selected>Sort by</option>
-                <option value="recent">Most Recent</option>
-                <option value="popular">Most Popular</option>
-            </select>
-        </div>
-    </div>
     
-    <div class="row masonry">
+    <div class="header-box">
+        <div class="d-flex justify-content-between align-items-center top-section">
+            <a href="../profile/index.html" class="text-decoration-none text-white fs-3 user-icon">
+                <i class="bi bi-person-circle"></i>
+            </a>
 
+            <div class="input-group search-sort">
+                <input type="text" class="form-control input-custom" placeholder="Search posts...">
+                <select class="form-select select-custom">
+                    <option selected>Sort by</option>
+                    <option value="recent">Most Recent</option>
+                    <option value="popular">Most Popular</option>
+                </select>
+            </div>
+            <a href="../feedPostCreate/index.html" class="btn btn-success btn-custom-small create-button">Create</a>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <h1 class="feed-title">Feed Page</h1>
+    </div>
+    <div class="row masonry">
         <div class="col-md-6 mb-4 masonry-item">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1617608917892-112806bc3087?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Post Thumbnail">

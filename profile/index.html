@@ -8,17 +8,20 @@
     <link rel="stylesheet" href="../styles/Styles.css">
     <script src="../js/auth/auth.js" defer></script>
 </head>
-<body class="container py-5">
-    <div class="mb-4">
-        <a href="../feed/index.html" class="btn btn-primary">Go to Feed</a>
-        <button onclick="logout()" class="btn btn-danger float-end">Log Out</button>
-    </div>
+<body class="container py-5 profile-page">
 
-    <div class="text-center mb-5">
-        <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-circle mb-3">
-        <h2>Many Thanks</h2>
-        <p>Followers: 2B+ | Following: 1</p>
-        <button class="btn btn-outline-primary">Follow</button>
+    <div class="header-box mb-4 p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a href="../feed/index.html" class="btn btn-primary">Go to Feed</a>
+            <button onclick="logout()" class="btn btn-danger">Log Out</button>
+        </div>
+
+        <div class="text-center">
+            <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-circle mb-3">
+            <h2>Many Thanks</h2>
+            <p>Followers: 2B+ | Following: 1</p>
+            <button class="btn btn-outline-primary">Follow</button>
+        </div>
     </div>
 
     <h3>User Posts</h3>

@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Register</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/Styles.css">
     <script src="./js/auth/auth.js" defer></script>
 </head>
-<body class="d-flex align-items-center justify-content-center vh-100">
-    <div class="container">
-        <div class="row justify-content-between mb-3">
-            <div class="col-auto">
-                <h1 class="text-center mb-4">Authentication Page</h1>
-            </div>
-            <div class="col-auto">
-                <a href="./Register/index.html" class="btn btn-link">Register</a>
-            </div>
-        </div>
-        <form onsubmit="login(); return false;" class="p-4 shadow rounded login-box">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
+<body class="d-flex align-items-center justify-content-center vh-100 auth-page">
+    <div class="container text-center" style="max-width: 516px;">
+        <h1 class="text-white mb-4">Login</h1>
+        <form onsubmit="login(); return false;" class="p-4 shadow rounded auth-box">
+            <div class="mb-3 text-start">
+                <label for="username" class="form-label text-black-50">Username:</label>
                 <input type="text" id="username" name="username" class="form-control" required>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
+            <div class="mb-3 text-start">
+                <label for="password" class="form-label text-black-50">Password:</label>
                 <input type="password" id="password" name="password" class="form-control" minlength="8" required>
             </div>
-            <button type="submit" class="btn btn-success w-100">Log In</button>
+            <button type="submit" class="btn btn-success w-100 fw-bold mb-3">Log In</button>
+            <button class="btn btn-placeholder w-100 mb-3" disabled>-/-</button>
+            <a href="./Register/index.html" class="btn btn-outline w-100">Register User Here</a>
         </form>
     </div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
